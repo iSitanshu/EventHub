@@ -15,10 +15,10 @@ const Header = () => {
         <div className="header-content">
           <div className="header-top">
             <div className="top-title">
-              <p><span>EventHub:</span> Where Every Event Becomes an Adventure</p>
+              <p className="animated-text"><span>EventHub:</span> Where Every Event Becomes an Adventure</p>
             </div>
             <div className="top-tagline">
-              <p>Discover, Explore, and Enjoy the Best Events Across the State – <br />
+              <p className="animated-text">Discover, Explore, and Enjoy the Best Events Across the State – <br />
               From Movies and Stand-up Comedy to Theater and More, All in One Place!</p>
             </div>
           </div>
