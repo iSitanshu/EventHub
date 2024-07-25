@@ -1,0 +1,56 @@
+/* Slidebar.css */
+.slidebar-main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background: linear-gradient(to right, #00a676, #004c4c);
+  color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.slidebar-main.active {
+  transform: translateX(0);
+}
+
+.side-left {
+  flex-grow: 1;
+  padding: 20px;
+  margin-top: 50px;
+  list-style: none;
+}
+
+.side-left li {
+  margin: 15px 0;
+}
+
+.side-left li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.side-left li a:hover {
+  color: #ffd700;
+  transform: scale(1.05);
+}
+
+.side-right {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.side-right img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.side-right img:hover {
+  transform: rotate(90deg);
+}
