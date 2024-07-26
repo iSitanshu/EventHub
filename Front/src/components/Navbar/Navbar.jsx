@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"
 import Header from "../Header/Header";
+import PopularEvents from "../PopularEvents/PopularEvents";
 
 const Navbar = ({ setShowSlidebar }) => {
     return (
@@ -21,6 +22,7 @@ const Navbar = ({ setShowSlidebar }) => {
             </ul>
         </div>
         <Header />
+        <PopularEvents/>
         </>
     )
 }

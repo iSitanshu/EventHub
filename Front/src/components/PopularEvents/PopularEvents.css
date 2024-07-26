@@ -1,0 +1,31 @@
+.popularevent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.popularevent p{
+    margin: 85px 0 30px;
+    text-align: center;
+    font-size: 2.5em;
+    color: #15ff00;
+    font-weight: 800;
+}
+.popularevent-button{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    align-items: center;
+}
+.popularevent-button button{
+    font-size: 17px;
+    padding: 7px;
+}
+.popularevent-button button:hover{
+    color: green;
+    transform: scale(1.1);
+}
