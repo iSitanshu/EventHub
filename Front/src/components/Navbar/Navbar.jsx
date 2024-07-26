@@ -5,6 +5,8 @@ import Header from "../Header/Header";
 import PopularEvents from "../PopularEvents/PopularEvents";
 import Explore from "../Explore/Explore";
 import Footer from "../Footer/Footer";
+import Standup from "../Standup/Standup";
+import NowShowing from "../NowShowing/NowShowing";
 
 const Navbar = ({ setShowSlidebar }) => {
     return (
@@ -25,6 +27,8 @@ const Navbar = ({ setShowSlidebar }) => {
         </div>
         <Header />
         <PopularEvents/>
+        <NowShowing />
+        <Standup />
         <Explore />
         <Footer />
         </>
