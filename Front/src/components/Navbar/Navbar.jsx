@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import "./Navbar.css"
 import Header from "../Header/Header";
 import PopularEvents from "../PopularEvents/PopularEvents";
+import Explore from "../Explore/Explore";
 
 const Navbar = ({ setShowSlidebar }) => {
     return (
         <><div className='Navbar'>
             <ul className="Navbar-left">
-                <li><Link to="/"><img src="./src/assets/Images/noalogo.jpeg" alt="" height={55} /></Link></li>
+                <li><Link to="/"><img src="./src/assets/Images/logo.gif" alt="" height={65} /></Link></li>
                 <li><input className="id" type="text" placeholder="   Search for Events,Movies,Plays and Standups" /></li>
             </ul>
             <ul className="Navbar-right">
@@ -23,6 +24,7 @@ const Navbar = ({ setShowSlidebar }) => {
         </div>
         <Header />
         <PopularEvents/>
+        <Explore />
         </>
     )
 }

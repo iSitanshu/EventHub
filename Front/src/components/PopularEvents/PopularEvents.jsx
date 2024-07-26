@@ -5,7 +5,8 @@ const PopularEvents = () => {
   return (
 <>
 <div className="popularevent">
-    <p className='popularevent-heading'>Popular Events in New Delhi</p> 
+    <p className='popularevent-heading'>
+      <span>Popular Events</span> in New Delhi</p> 
     <div className='popularevent-button'>
         <button>Standup</button>
         <button>Movies</button>

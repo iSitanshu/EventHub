@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0 0 100px;
     align-items: center;
     text-align: center;
 }
@@ -9,8 +10,14 @@
     margin: 85px 0 30px;
     text-align: center;
     font-size: 2.5em;
-    color: #15ff00;
     font-weight: 800;
+}
+.popularevent p span{
+    color: #333;
+}
+.popularevent p span:hover{
+    color: #15ff00;
+    transform: scale(1.5);
 }
 .popularevent-button{
     padding: 10px;
@@ -22,6 +29,7 @@
     align-items: center;
 }
 .popularevent-button button{
+    cursor: pointer;
     font-size: 17px;
     padding: 7px;
 }

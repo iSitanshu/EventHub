@@ -37,7 +37,7 @@
     width: 100px;
     cursor: pointer;
     border-radius: 5px;
-    background: linear-gradient(to right,rgb(4, 218, 4),rgba(0, 0, 0, 0.76));
+    background: linear-gradient(to right, #d1fc00,rgba(0, 0, 0, 0.397));
     color: white;
     text-shadow: 0 0 60px rgba(0, 128, 0, 0.192);
     animation: anime 1s infinite alternate;
