@@ -4,6 +4,7 @@ import "./Navbar.css"
 import Header from "../Header/Header";
 import PopularEvents from "../PopularEvents/PopularEvents";
 import Explore from "../Explore/Explore";
+import Footer from "../Footer/Footer";
 
 const Navbar = ({ setShowSlidebar }) => {
     return (
@@ -25,6 +26,7 @@ const Navbar = ({ setShowSlidebar }) => {
         <Header />
         <PopularEvents/>
         <Explore />
+        <Footer />
         </>
     )
 }
