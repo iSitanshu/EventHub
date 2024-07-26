@@ -1,58 +1,61 @@
 import React, { useEffect, useState } from 'react';
-import "./Movies.css";
+import "./NowShowing.css";
+
+const images = [
+    { src: 'src/assets/Images/Deadpool.jpeg', title: 'Deadpool & Wolverine', comedian: '5/5 Rating', event: 'Action/Comedy', venue: 'Hindi/English'},
+    { src: 'src/assets/Images/Kalki.jpeg', title: 'Kalki', comedian: '4.2/5 Rating', event: 'Action/Sci-Fi', venue: 'Hindi/English' },
+    { src: 'src/assets/Images/Baddnews.jpeg', title: 'BadNews', comedian: '3/5 Rating', event: 'Comedy', venue: 'Hindi/English'},
+    { src: 'src/assets/Images/Kill.jpeg', title: 'Kill', comedian: '4.7/5', event: 'Suspense/Drama', venue: 'Hindi/English'},
+    { src: 'src/assets/Images/Stree.jpeg', title: 'Stree 2', comedian: '4.8/5 Rating', event: 'Horror/Comedy', venue: 'Hindi/English'},
+    { src: 'src/assets/Images/Safira.jpeg', title: 'Sarfira', comedian: '3.8/5', event: 'Drama', venue: 'Hindi/English'},
+    { src: 'src/assets/Images/Up.jpeg', title: 'The UP Files', comedian: '3.5/5 Rating', event: 'Drama/Politics', venue: 'Hindi/English'},
+    { src: 'src/assets/Images/Deadpool.jpeg', title: 'Deadpool', comedian: '5/5 Rating', event: 'Action/Comedy', venue: 'Hindi/English'}
+];
 
 const NowShowing = () => {
-  const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(null);
+    const [index, setIndex] = useState(0);
+    const totalSlides = images.length;
 
-  useEffect(() => {
-    fetch('https://api-gate2.movieglu.com/filmsNowShowing/?n=8', {
-      method: 'GET',
-      headers: {
-        'client': 'EVEN_2',
-        'x-api-key': 'qR6yEljujv1h0FOYzPREl8XbN17UveQ47iVOy3r8',
-        'authorization': 'Basic RVZFTl8yOlQ4QURCQTZ2YkdVZw==',
-        'territory': 'IN',
-        'api-version': 'v200',
-        'geolocation': '28.6129;77.2286',
-        'device-datetime': new Date().toISOString()
-      } 
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => setMovies(data.films))
-    .catch(error => {
-      console.error('Error:', error);
-      setError('Failed to fetch movies. Please try again later.');
-    });
-  }, []);
-  console.log(response)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+        }, 3000); // Change slide every 3 seconds
 
-  return (
-    <div className="movie-carousel">
-      <h2>Films Now Showing</h2>
-      {error && <p className="error">{error}</p>}
-      <div className="slider">
-        {movies.map((movie, index) => (
-          <div className="slide" key={index}>
-            <img 
-              src={movie.images?.[0]?.medium?.film_image || 'default_image.jpg'} 
-              alt={movie.film_name || 'No title'} 
-            />
-            <div className="caption">
-              <p className="title"><strong>{movie.film_name || 'Unknown Title'}</strong></p>
-              <p>{movie.release_dates?.[0]?.release_date || 'TBD'}</p>
-              <p>{movie.genres?.map(genre => genre.genre_name).join(', ') || 'Genre Unknown'}</p>
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, [totalSlides]);
+
+    const nextSlide = () => {
+        setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+    };
+
+    const prevSlide = () => {
+        setIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
+    };
+
+    return (
+        <div className="standup">
+            <p><span>Recommended</span> Movies</p>
+            <div className="slider">
+                <div className="slides" style={{ transform: `translateX(${-index * 25}%)` }}>
+                    {images.map((image, idx) => (
+                        <div className="slide" key={idx}>
+                            <img src={image.src} alt={`Slide ${idx + 1}`} />
+                            <div className="caption">
+                                <p className="title"><strong>{image.title}</strong></p>
+                                <p className="comedian"><strong>{image.comedian}</strong></p>
+                                <p>{image.venue}</p>
+                                <p>{image.event}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="navigation">
+                    <button className="button arrow-left" onClick={prevSlide}>❮</button>
+                    <button className="button arrow-right" onClick={nextSlide}>❯</button>
+                </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+        </div>
+    );
+}
 
 export default NowShowing;
