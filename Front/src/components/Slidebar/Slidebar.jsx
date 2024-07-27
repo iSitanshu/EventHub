@@ -15,7 +15,6 @@ const Slidebar = ({ showSlidebar, setShowSlidebar }) => {
             <div className="side-right" onClick={() => setShowSlidebar(false)}>
                 <img src="./src/assets/Images/cross.jpeg" alt="Close" height={50} className="cross-icon" />
             </div>
-
         </div>
     );
 };
