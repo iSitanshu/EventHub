@@ -10,7 +10,8 @@ import NowShowing from "../NowShowing/NowShowing";
 import Play from "../Play/Play"
 import OtherEvent from "../OtherEvents/OtherEvents"
 
-const Navbar = ({ setShowSlidebar }) => {
+const Navbar = ({ setShowSlidebar, setShowLogin }) => {
+
     return (
         <><div className='Navbar'>
             <ul className="Navbar-left">
@@ -19,7 +20,8 @@ const Navbar = ({ setShowSlidebar }) => {
             </ul>
             <ul className="Navbar-right">
                 <li><Link><p><img src="./src/assets/Images/Location.jpeg" alt="" height={30} /></p></Link></li>
-                <li><Link><div className="box"><button className="id">Sign up</button></div></Link></li>
+                <li><Link><div className="box"><button className="id"
+                onClick={() => setShowLogin(true)}>Sign up</button></div></Link></li>
 
                 <li><div className="Navbar-menu" >
                     <img src="./src/assets/Images/menuicon.jpeg"
