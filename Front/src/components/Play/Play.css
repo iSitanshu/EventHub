@@ -1,0 +1,115 @@
+.standup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    overflow: hidden; /* Ensure arrows are contained within the slider */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%; /* Adjust based on the number of slides */
+}
+
+.slide {
+    width: 25%; /* Adjust based on the number of slides */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.caption p {
+    margin: 5px 0;
+}
+
+.title, .comedian {
+    font-size: 18px;
+}
+
+.slide:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure arrows are above slides */
+}
+
+.button {
+    background: none;
+    border: none;
+    font-size: 3rem; /* Increased size */
+    cursor: pointer;
+    outline: none;
+    padding: 0 20px; /* Adjust padding if necessary */
+    transition: color 0.3s ease;
+    color: black; /* Arrow color */
+}
+
+.button:hover {
+    color: #494949;
+}
+
+.arrow-left {
+    position: absolute;
+    left: 10px; /* Adjust as needed to position inside */
+    z-index: 10; /* Ensure visibility */
+    
+    border: 1px solid black;
+    border-radius: 50%;
+    color: grey;
+    background-color: black;
+    opacity: 90%;
+}
+
+.arrow-right {
+    position: absolute;
+    right: 10px; /* Adjust as needed to position inside */
+    z-index: 10; /* Ensure visibility */
+    
+    border: 1px solid black;
+    border-radius: 50%;
+    color: grey;
+    background-color: black;
+    opacity: 90%;
+}
+.arrow-right:hover{
+    opacity: 100%;
+    color: greenyellow;
+    cursor: pointer;
+}
+.arrow-left:hover{
+    opacity: 100%;
+    color: greenyellow;
+    cursor: pointer;
+}
