@@ -32,7 +32,7 @@ const NowShowing = () => {
 
     return (
         <div className="standup">
-            <p><span>Recommended</span> Movies</p>
+            <p><span>Plays</span> and Theatre</p>
             <div className="slider">
                 <div className="slides" style={{ transform: `translateX(${-index * 25}%)` }}>
                     {images.map((image, idx) => (
