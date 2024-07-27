@@ -21,22 +21,26 @@ const Navbar = ({ setShowSlidebar, setShowLogin }) => {
             <ul className="Navbar-right">
                 <li><Link><p><img src="./src/assets/Images/Location.jpeg" alt="" height={30} /></p></Link></li>
                 <li><Link><div className="box"><button className="id"
-                onClick={() => setShowLogin(true)}>Sign up</button></div></Link></li>
+                    onClick={() => setShowLogin(true)}>Sign up</button></div></Link></li>
 
                 <li><div className="Navbar-menu" >
-                    <img src="./src/assets/Images/menuicon.jpeg"
+                    <img
+                        src="./src/assets/Images/menuicon.jpeg"
                         onClick={() => setShowSlidebar(true)}
-                        alt="" height={37} /></div></li>
+                        alt=""
+                        height={37}
+                    />
+                </div></li>
             </ul>
         </div>
-        <Header />
-        <PopularEvents/>
-        <NowShowing />
-        <Play />
-        <Explore />
-        <Standup />
-        <OtherEvent />
-        <Footer />
+            <Header />
+            <PopularEvents />
+            <NowShowing />
+            <Play />
+            <Explore />
+            <Standup />
+            <OtherEvent />
+            <Footer />
         </>
     )
 }

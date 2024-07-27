@@ -7,13 +7,15 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 
 
 function App() {
-  const [showSlidebar,setShowSlidebar] = useState(false)
+  const [showSlidebar,setShowSlidebar] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+
+  
   
   return (
     <>
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
-      {showSlidebar && <Slidebar setShowSlidebar={setShowSlidebar}/>}
+      {showSlidebar && <Slidebar showSlidebar={showSlidebar} setShowSlidebar={setShowSlidebar} />}
       <Navbar setShowSlidebar={setShowSlidebar} setShowLogin={setShowLogin} />
       {/* <Routes>
         <Router path="/about" element={<About/>}/>

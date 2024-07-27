@@ -4,7 +4,7 @@
   right: 0;
   height: 100vh;
   width: 250px;
-  background: linear-gradient(to right, #00a676, #004c4c);
+  background-color: greenyellow;
   color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease-in-out;
@@ -52,7 +52,7 @@
 .cross-icon:hover {
   transform: rotate(90deg);
 }
-
-.slidebar-main:hover {
-  background-color: greenyellow; /* Change background color on hover */
+.cross-icon:hover {
+  transform: rotate(90deg);
+  transition: transform 0.2s;
 }
