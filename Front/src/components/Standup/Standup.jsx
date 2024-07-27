@@ -6,7 +6,7 @@ const images = [
     { src: 'src/assets/Images/Samay.webp', title: 'India Got Latent', comedian: 'Samay Raina', event: 'Comedy Show', venue: 'The Laugh Store', price: '$999 onwards' },
     { src: 'src/assets/Images/Madhur.png', title: 'Madhur Virli Live', comedian: 'Madhur Virli', event: 'Standup Comedy', venue: 'The Laugh Store', price: '$399 onwards' },
     { src: 'src/assets/Images/Swati.jpeg', title: 'Love is Love', comedian: 'Swati Sachdeva', event: 'Standup Comedy', venue: 'The Laugh Store', price: '$499 onwards' },
-    { src: 'src/assets/Images/Zakir.jpeg', title: 'Haq Se Single', comedian: 'Zakir Khan', event: 'Standup Comedy', venue: 'The Laugh Store', price: '$399 onwards' },
+    { src: 'src/assets/Images/z.jpeg', title: 'Haq Se Single', comedian: 'Zakir Khan', event: 'Standup Comedy', venue: 'The Laugh Store', price: '$399 onwards' },
     { src: 'src/assets/Images/Aashish.webp', title: 'Pretty Good Show', comedian: 'Aashish Solanki', event: 'Standup Comedy', venue: 'The Laugh Store', price: '$1499 onwards' },
     { src: 'src/assets/Images/Biswa.jpeg', title: 'Biswa Mast Insaan', comedian: 'Biswa Kalyan Rath', event: 'Standup Comedy', venue: 'The Laugh Store', price: '$999 onwards' },
     { src: 'src/assets/Images/Akshay.jpeg', title: 'Akshay Srivastava', comedian: 'Akshay Srivastava', event: 'Standup Comedy', venue: 'The Laugh Store', price: '$399 onwards' }
@@ -51,8 +51,8 @@ const Standup = () => {
                     ))}
                 </div>
                 <div className="navigation">
-                    <button className="button" onClick={prevSlide}>❮</button>
-                    <button className="button" onClick={nextSlide}>❯</button>
+                    <button className="button arrow-left" onClick={prevSlide}>❮</button>
+                    <button className="button arrow-right" onClick={nextSlide}>❯</button>
                 </div>
             </div>
         </div>

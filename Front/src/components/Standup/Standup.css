@@ -79,3 +79,36 @@
 .button:hover {
     color: #494949;
 }
+.arrow-left {
+    position: absolute;
+    left: 10px; /* Adjust as needed to position inside */
+    z-index: 10; /* Ensure visibility */
+    
+    border: 1px solid black;
+    border-radius: 50%;
+    color: grey;
+    background-color: black;
+    opacity: 90%;
+}
+
+.arrow-right {
+    position: absolute;
+    right: 10px; /* Adjust as needed to position inside */
+    z-index: 10; /* Ensure visibility */
+    
+    border: 1px solid black;
+    border-radius: 50%;
+    color: grey;
+    background-color: black;
+    opacity: 90%;
+}
+.arrow-right:hover{
+    opacity: 100%;
+    color: greenyellow;
+    cursor: pointer;
+}
+.arrow-left:hover{
+    opacity: 100%;
+    color: greenyellow;
+    cursor: pointer;
+}
