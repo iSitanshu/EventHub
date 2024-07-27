@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import "./Play.css";
+import "./OtherEvents.css";
 
 const images = [
-    { src: 'src/assets/Images/Angry.jpeg', title: '12 Angry Women', comedian: '5/5 Rating', event: 'Inspirational', venue: 'English'},
-    { src: 'src/assets/Images/Death.jpeg', title: 'Death of Salesman', comedian: '4.6/5 Rating', event: 'Action/Sci-Fi', venue: 'Hindi/English' },
-    { src: 'src/assets/Images/MV.jpeg', title: 'Madhyam Vyayog', comedian: '3.9/5 Rating', event: 'Horror/Suspense', venue: 'English'},
-    { src: 'src/assets/Images/Nirbhaya.jpeg', title: 'Nirbhaya', comedian: '4.8/5 Rating', event: 'Suspense/Drama', venue: 'Hindi'},
-    { src: 'src/assets/Images/Taj.jpeg', title: 'Taj Mahal ke Tender', comedian: '4.8/5 Rating', event: 'Comedy/Drama', venue: 'Hindi'},
-    { src: 'src/assets/Images/Tuglaq.jpeg', title: 'Tughlaq', comedian: '3.8/5 Rating', event: 'Drama/Motivational', venue: 'Hindi'},
+    { src: 'src/assets/Images/ice.jpeg', title: 'Ice Skating', comedian: '4.8/5 Rating', event: '12:00 PM to 10:00 PM', venue: 'IkaTE, DLF, Gurgoan'},
+    { src: 'src/assets/Images/nehru.webp', title: 'Nehru Planetarium', comedian: '4.1/5 Rating', event: '10:00 AM to 2:00 PM', venue: 'Lush Green campus' },
+    { src: 'src/assets/Images/rum.jpeg', title: 'Rumbo Circus', comedian: '3.9/5 Rating', event: '5:00 PM to 8:00 PM', venue: 'Delhi'},
+    { src: 'src/assets/Images/van.jpeg', title: 'Van Gosh 360', comedian: '4.3/5 Rating', event: '8:00 AM to 3:00 PM', venue: 'New Delhi'},
+    { src: 'src/assets/Images/tramp.jpeg', title: 'SkyJumper Trampoline Park', comedian: '4.9/5 Rating', event: '10:00 AM to 7:00 PM', venue: 'Swarn Jayanti Park, New Delhi'},
+    { src: 'src/assets/Images/wow.jpeg', title: 'Worlds of Wonder', comedian: '4.2/5 Rating', event: '10:00 AM to 6:00 PM', venue: 'Sector-38A, Noida'},
 ];
 
-const NowShowing = () => {
+const Standup = () => {
     const [index, setIndex] = useState(0);
     const totalSlides = images.length;
 
@@ -32,9 +32,9 @@ const NowShowing = () => {
 
     return (
         <div className="standup">
-            <p><span>Plays</span> and Theatre</p>
+            <p><span>Other</span> Events</p>
             <div className="slider">
-                <div className="slides" style={{ transform: `translateX(${-index * 25}%)` }}>
+                <div className="slides" style={{ transform: `translateX(${-index * 25}%)`, transition: 'transform 0.5s ease-in-out' }}>
                     {images.map((image, idx) => (
                         <div className="slide" key={idx}>
                             <img src={image.src} alt={`Slide ${idx + 1}`} />
@@ -43,6 +43,7 @@ const NowShowing = () => {
                                 <p className="comedian"><strong>{image.comedian}</strong></p>
                                 <p>{image.venue}</p>
                                 <p>{image.event}</p>
+                                <p>{image.price}</p>
                             </div>
                         </div>
                     ))}
@@ -56,4 +57,4 @@ const NowShowing = () => {
     );
 }
 
-export default NowShowing;
+export default Standup;

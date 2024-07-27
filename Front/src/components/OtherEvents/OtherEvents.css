@@ -12,17 +12,19 @@
     position: relative;
     width: 100%;
     max-width: 1000px;
-    overflow: hidden; /* Ensure arrows are contained within the slider */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 400%; /* Adjust based on the number of slides */
+    width: 400%; /* 4 slides visible at a time */
 }
 
 .slide {
-    width: 25%; /* Adjust based on the number of slides */
+    width: 25%;
     flex-shrink: 0;
     box-sizing: border-box;
     padding: 10px;
@@ -30,7 +32,6 @@
 }
 
 .slide img {
-    cursor: pointer;
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -45,12 +46,10 @@
 
 .caption p {
     margin: 5px 0;
-    cursor: pointer;
 }
 
 .title, .comedian {
     font-size: 18px;
-    cursor: pointer;
 }
 
 .slide:hover {
@@ -65,24 +64,21 @@
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-    z-index: 10; /* Ensure arrows are above slides */
 }
 
 .button {
     background: none;
     border: none;
-    font-size: 3rem; /* Increased size */
+    font-size: 2rem;
     cursor: pointer;
     outline: none;
-    padding: 0 20px; /* Adjust padding if necessary */
+    padding: 0 20px;
     transition: color 0.3s ease;
-    color: black; /* Arrow color */
 }
 
 .button:hover {
     color: #494949;
 }
-
 .arrow-left {
     position: absolute;
     left: 10px; /* Adjust as needed to position inside */

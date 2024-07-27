@@ -33,6 +33,7 @@
 
 .slide img {
     width: 100%;
+    cursor: pointer;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -45,10 +46,12 @@
 }
 
 .caption p {
+    cursor: pointer;
     margin: 5px 0;
 }
 
 .title, .comedian {
+    cursor: pointer;
     font-size: 18px;
 }
 

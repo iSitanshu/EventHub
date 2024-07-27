@@ -19,7 +19,7 @@ const Standup = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-        }, 5000); // Change slide every 3 seconds
+        }, 10000); // Change slide every 3 seconds
 
         return () => clearInterval(interval); // Cleanup on unmount
     }, [totalSlides]);
