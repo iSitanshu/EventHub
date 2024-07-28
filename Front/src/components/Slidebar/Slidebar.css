@@ -37,14 +37,12 @@
   color: #ffd700;
   transform: scale(1.05);
 }
-
 .side-right {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
   cursor: pointer;
 }
-
 .cross-icon {
   transition: transform 0.2s;
 }
