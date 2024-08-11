@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import { Routes } from 'react-router';
+import usemovieshowing from './Hooks/movieshowing';
 import Slidebar from './components/Slidebar/Slidebar';
 import LoginPopup from './components/LoginPopup/LoginPopup'
 
@@ -9,8 +10,6 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 function App() {
   const [showSlidebar,setShowSlidebar] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-
-  
   
   return (
     <>

@@ -9,6 +9,8 @@ import Standup from "../Standup/Standup";
 import NowShowing from "../NowShowing/NowShowing";
 import Play from "../Play/Play"
 import OtherEvent from "../OtherEvents/OtherEvents"
+import Temp from "../Change/Temp"
+
 
 const Navbar = ({ setShowSlidebar, setShowLogin }) => {
 
