@@ -13,6 +13,7 @@ function App() {
   
   return (
     <>
+    <h1>jskaldjlksdjlshfj</h1>
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
       {showSlidebar && <Slidebar showSlidebar={showSlidebar} setShowSlidebar={setShowSlidebar} />}
       <Navbar setShowSlidebar={setShowSlidebar} setShowLogin={setShowLogin} />
