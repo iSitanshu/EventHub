@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { image1 } from '../../assets/Images/assets';
 import "./LoginPopup.css";
 
 const LoginPopup = ({setShowLogin}) => {
@@ -10,7 +11,7 @@ const LoginPopup = ({setShowLogin}) => {
             <form className="login-popup-container">
                 <div className="login-popup-title">
                     <h2>{currState}</h2>
-                    <img onClick={() => setShowLogin(false)} src="./src/assets/Images/logo.gif" height={50} alt="Close" />
+                    <img onClick={() => setShowLogin(false)} src={image1} height={50} alt="Close" />
                 </div>
                 <div className="login-popup-inputs">
                     {currState === "Login" ? null : <input type="text" placeholder='Your name' required />}
