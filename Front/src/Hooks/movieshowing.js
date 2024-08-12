@@ -4,7 +4,7 @@ function usemovieshowing() {
     const [data, setData] = useState([]);
     
     useEffect(() => {
-        fetch('https://api-gate2.movieglu.com/filmsNowShowing/?n=12', {
+        fetch('https://api-gate2.movieglu.com/filmsNowShowing/?n=9', {
             method: 'GET',
             headers: {
                 'client': 'EVEN_2',
