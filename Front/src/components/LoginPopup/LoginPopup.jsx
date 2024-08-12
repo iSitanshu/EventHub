@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { image1 } from '../../assets/Images/assets';
+import { image1 } from '../../../public/Images/assets';
 import "./LoginPopup.css";
 
 const LoginPopup = ({setShowLogin}) => {

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import "./Play.css";
+import { image2, image3, image4, image5, image6, image7 } from '../../../public/Images/assets';
+
 
 const images = [
-    { src: 'src/assets/Images/Angry.jpeg', title: '12 Angry Women', comedian: '5/5 Rating', event: 'Inspirational', venue: 'English'},
-    { src: 'src/assets/Images/Death.jpeg', title: 'Death of Salesman', comedian: '4.6/5 Rating', event: 'Action/Sci-Fi', venue: 'Hindi/English' },
-    { src: 'src/assets/Images/MV.jpeg', title: 'Madhyam Vyayog', comedian: '3.9/5 Rating', event: 'Horror/Suspense', venue: 'English'},
-    { src: 'src/assets/Images/Nirbhaya.jpeg', title: 'Nirbhaya', comedian: '4.8/5 Rating', event: 'Suspense/Drama', venue: 'Hindi'},
-    { src: 'src/assets/Images/Taj.jpeg', title: 'Taj Mahal ke Tender', comedian: '4.8/5 Rating', event: 'Comedy/Drama', venue: 'Hindi'},
-    { src: 'src/assets/Images/Tuglaq.jpeg', title: 'Tughlaq', comedian: '3.8/5 Rating', event: 'Drama/Motivational', venue: 'Hindi'},
+    { src: image2, title: '12 Angry Women', comedian: '5/5 Rating', event: 'Inspirational', venue: 'English'},
+    { src: image3, title: 'Death of Salesman', comedian: '4.6/5 Rating', event: 'Action/Sci-Fi', venue: 'Hindi/English' },
+    { src: image4, title: 'Madhyam Vyayog', comedian: '3.9/5 Rating', event: 'Horror/Suspense', venue: 'English'},
+    { src: image5, title: 'Nirbhaya', comedian: '4.8/5 Rating', event: 'Suspense/Drama', venue: 'Hindi'},
+    { src: image6, title: 'Taj Mahal ke Tender', comedian: '4.8/5 Rating', event: 'Comedy/Drama', venue: 'Hindi'},
+    { src: image7, title: 'Tughlaq', comedian: '3.8/5 Rating', event: 'Drama/Motivational', venue: 'Hindi'},
 ];
 
 const NowShowing = () => {

@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import "./OtherEvents.css";
-
-const images = [
-    { src: 'src/assets/Images/ice.jpeg', title: 'Ice Skating', comedian: '4.8/5 Rating', event: '12:00 PM to 10:00 PM', venue: 'IkaTE, DLF, Gurgoan'},
-    { src: 'src/assets/Images/nehru.webp', title: 'Nehru Planetarium', comedian: '4.1/5 Rating', event: '10:00 AM to 2:00 PM', venue: 'Lush Green campus' },
-    { src: 'src/assets/Images/rum.jpeg', title: 'Rumbo Circus', comedian: '3.9/5 Rating', event: '5:00 PM to 8:00 PM', venue: 'Delhi'},
-    { src: 'src/assets/Images/van.jpeg', title: 'Van Gosh 360', comedian: '4.3/5 Rating', event: '8:00 AM to 3:00 PM', venue: 'New Delhi'},
-    { src: 'src/assets/Images/tramp.jpeg', title: 'SkyJumper Trampoline Park', comedian: '4.9/5 Rating', event: '10:00 AM to 7:00 PM', venue: 'Swarn Jayanti Park, New Delhi'},
-    { src: 'src/assets/Images/wow.jpeg', title: 'Worlds of Wonder', comedian: '4.2/5 Rating', event: '10:00 AM to 6:00 PM', venue: 'Sector-38A, Noida'},
-];
+import React, { useEffect, useState } from 'react'; // Import useState and useEffect
+import {
+    ice,
+    nehu,
+    rum,
+    van,
+    tramp,
+    wow,
+} from '../../../public/Images/assets'; // Adjust the path according to your structure
+import './OtherEvents.css'
 
 const Standup = () => {
+    const images = [
+        { src: ice, title: 'Ice Skating', comedian: '4.8/5 Rating', event: '12:00 PM to 10:00 PM', venue: 'IkaTE, DLF, Gurgoan', price: '$20' },
+        { src: nehu, title: 'Nehru Planetarium', comedian: '4.1/5 Rating', event: '10:00 AM to 2:00 PM', venue: 'Lush Green campus', price: '$15' },
+        { src: rum, title: 'Rumbo Circus', comedian: '3.9/5 Rating', event: '5:00 PM to 8:00 PM', venue: 'Delhi', price: '$25' },
+        { src: van, title: 'Van Gosh 360', comedian: '4.3/5 Rating', event: '8:00 AM to 3:00 PM', venue: 'New Delhi', price: '$30' },
+        { src: tramp, title: 'SkyJumper Trampoline Park', comedian: '4.9/5 Rating', event: '10:00 AM to 7:00 PM', venue: 'Swarn Jayanti Park, New Delhi', price: '$18' },
+        { src: wow, title: 'Worlds of Wonder', comedian: '4.2/5 Rating', event: '10:00 AM to 6:00 PM', venue: 'Sector-38A, Noida', price: '$22' },
+    ];
+
     const [index, setIndex] = useState(0);
     const totalSlides = images.length;
 
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-        }, 10000); // Change slide every 3 seconds
+        }, 8000); // Change slide every 10 seconds
 
         return () => clearInterval(interval); // Cleanup on unmount
     }, [totalSlides]);
@@ -43,7 +51,7 @@ const Standup = () => {
                                 <p className="comedian"><strong>{image.comedian}</strong></p>
                                 <p>{image.venue}</p>
                                 <p>{image.event}</p>
-                                <p>{image.price}</p>
+                                <p>{image.price}</p> {/* Ensure price is displayed */}
                             </div>
                         </div>
                     ))}

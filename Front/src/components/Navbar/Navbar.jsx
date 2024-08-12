@@ -10,14 +10,14 @@ import NowShowing from "../NowShowing/NowShowing";
 import Play from "../Play/Play"
 import OtherEvent from "../OtherEvents/OtherEvents"
 import Temp from "../Change/Temp"
-
+import { image1 } from "../../../public/Images/assets";
 
 const Navbar = ({ setShowSlidebar, setShowLogin }) => {
 
     return (
         <><div className='Navbar'>
             <ul className="Navbar-left">
-                <li><Link to="/"><img src="./src/assets/Images/logo.gif" alt="" height={65} /></Link></li>
+                <li><Link to="/"><img src={image1} alt="" height={65} /></Link></li>
                 <li><input className="id" type="text" placeholder="   Search for Events,Movies,Plays and Standups" /></li>
             </ul>
             <ul className="Navbar-right">

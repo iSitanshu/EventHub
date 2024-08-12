@@ -1,16 +1,26 @@
 import React from 'react';
 import "./Explore.css";
+import {
+  concert,
+  food,
+  meetup,
+  football,
+  guitar,
+  cricket,
+  car,
+  festival,
+} from '../../../public/Images/assets';
 
 const Explore = () => {
   const events = [
-    { img: "./src/assets/Images/concert.jpeg", title: "Concert" },
-    { img: "./src/assets/Images/food.jpeg", title: "Food & Drinks" },
-    { img: "./src/assets/Images/meetup.jpeg", title: "Meetup" },
-    { img: "./src/assets/Images/football.jpeg", title: "Sports" },
-    { img: "./src/assets/Images/guitar.jpeg", title: "Music" },
-    { img: "./src/assets/Images/cricket.jpeg", title: "IPL" },
-    { img: "./src/assets/Images/car.jpeg", title: "Car Shows" },
-    { img: "./src/assets/Images/festival.jpeg", title: "Festivals" },
+      { img: concert, title: "Concert" },
+      { img: food, title: "Food & Drinks" },
+      { img: meetup, title: "Meetup" },
+      { img: football, title: "Sports" },
+      { img: guitar, title: "Music" },
+      { img: cricket, title: "IPL" },
+      { img: car, title: "Car Shows" },
+      { img: festival, title: "Festivals" },
   ];
 
   return (
