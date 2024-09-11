@@ -15,6 +15,7 @@ function usemovieshowing() {
                 'geolocation': '28.6129;77.2286',
                 'device-datetime': new Date().toISOString()
             }
+            
         })
         .then(response => response.json())
         .then(data => {
