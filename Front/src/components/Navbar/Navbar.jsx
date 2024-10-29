@@ -16,7 +16,7 @@ const Navbar = ({ setShowSlidebar, setShowLogin }) => {
 
     return (
         <><div className='Navbar'>
-            <ul className="Navbar-left">
+            <ul className=" Navbar-left">
                 <li><Link to="/"><img src={image1} alt="" height={65} /></Link></li>
                 <li><input className="id" type="text" placeholder="   Search for Events,Movies,Plays and Standups" /></li>
             </ul>
