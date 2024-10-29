@@ -1,6 +1,13 @@
 import React from 'react';
 import "./Footer.css";
 
+import {
+    insta,
+    tweet,
+    What,
+    tele
+} from '../../../public/Images/assets'; 
+
 const Footer = () => {
     return (
         <div className='footer' id='footer'>
@@ -8,11 +15,11 @@ const Footer = () => {
                 <div className="footer-content-left">
                     <p className='footer-title'>Event Hub</p>
                     <p className='footer-description'>Discover, explore, and enjoy the best events across the state. Stay updated with what's happening around you.</p>
-                    <div className="footer-social-icons">
-                        <img src="./src/assets/Images/instagram.jpeg" alt="Instagram" />
-                        <img src="./src/assets/Images/twitter.jpeg" alt="Twitter" />
-                        <img src="./src/assets/Images/whatsapp.jpeg" alt="WhatsApp" />
-                        <img src="./src/assets/Images/telegram.jpeg" alt="Telegram" />
+                    <div className="footer-social-icons flex">
+                        <img src={insta} alt="Instagram" />
+                        <img src={tweet} alt="Twitter" />
+                        <img src={What} alt="WhatsApp" />
+                        <img src={tele} alt="Telegram" />
                     </div>
                 </div>
                 <div className="footer-content-center">

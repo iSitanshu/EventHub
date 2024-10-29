@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom'
 import "./Standup.css";
 
 import {
-    abhishek,
+    abhishek,  
     samay,
     madhur,
     swati,

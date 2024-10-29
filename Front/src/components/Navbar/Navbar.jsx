@@ -35,14 +35,6 @@ const Navbar = ({ setShowSlidebar, setShowLogin }) => {
                 </div></li>
             </ul>
         </div>
-            <Header />
-            <PopularEvents />
-            <NowShowing />
-            <Play />
-            <Explore />
-            <Standup />
-            <OtherEvent />
-            <Footer />
         </>
     )
 }

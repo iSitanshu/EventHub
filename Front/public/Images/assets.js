@@ -27,10 +27,14 @@ import rum from './rum.jpeg';
 import van from './van.jpeg';
 import tramp from './tramp.jpeg';
 import wow from './wow.jpeg';
+import insta from './instagram.jpeg';
+import tweet from './twitter.jpeg';
+import What from './whatsapp.jpeg';
+import tele from './telegram.jpeg'
 
 export {
     concert, food, meetup, football, guitar, cricket,
     car, festival, abhishek, samay, madhur, swati, zakir, aashish, biswa, akshay,
     image1, image2, image3, image4, image5, image6, image7,
-    ice, nehu, rum, van, tramp, wow // Exporting new images
+    ice, nehu, rum, van, tramp, wow, insta,tweet,What,tele // Exporting new images
 };
