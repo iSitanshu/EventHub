@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import "./NowShowing.css";
 import usemovieshowing from '../../Hooks/movieshowing';
+import { Link, NavLink } from 'react-router-dom';
 
 const NowShowing = () => {
     const [index, setIndex] = useState(0);
     const moviedata = usemovieshowing();
-    const [hoveredIndex, setHoveredIndex] = useState(null);
     const totalSlides = moviedata.length;
+    console.log("Movie data length = ",totalSlides);
+    const slidesToShow = 4; // Number of slides to show at once
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+            setIndex((prevIndex) => (prevIndex + 1) % slidesToShow);
         }, 5000);
 
         return () => clearInterval(interval);
     }, [totalSlides]);
 
     const nextSlide = () => {
-        setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+        setIndex((prevIndex) => (prevIndex + 1) % slidesToShow);
     };
 
     const prevSlide = () => {
-        setIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
+        setIndex((prevIndex) => (prevIndex - 1 + Math.ceil(totalSlides / slidesToShow)) % slidesToShow);
     };
 
     if (!totalSlides) {
@@ -32,12 +34,14 @@ const NowShowing = () => {
         <div className="standup">
             <p><span>Recommended</span> Movies</p>
             <div className="slider">
-                <div className="slides" style={{ transform: `translateX(${-index * 25}%)` }}>
+                <div className="slides" style={{ transform: `translateX(${-index * (100 / slidesToShow)}%)` }}>
                     {moviedata.map((movie, idx) => {
                         const poster = movie.images.poster && movie.images.poster["1"];
                         const posterImage = poster ? poster.medium.film_image : "fallback_image_url.jpg"; // Fallback image
                         return (
-                            <div className="slide" key={idx}>
+                            <NavLink to="/Movies" 
+                            state={{movie}}
+                            className="slide" key={idx} style={{ width: `${100 / slidesToShow}%` }}>
                                 {poster && (
                                     <img
                                         src={posterImage}
@@ -47,9 +51,8 @@ const NowShowing = () => {
                                 <div className="caption">
                                     <p className="title"><strong>{movie.film_name}</strong></p>
                                     <p className="comedian"><span>Rating : </span><strong>{movie.age_rating[0]?.rating || "N/A"}</strong></p>
-                                    {/* <p>{movie.synopsis_long || "Description not available."}</p> */}
                                 </div>
-                            </div>
+                            </NavLink>
                         );
                     })}
                 </div>

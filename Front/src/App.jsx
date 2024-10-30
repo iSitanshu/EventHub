@@ -6,8 +6,8 @@ import usemovieshowing from './Hooks/movieshowing';
 import Slidebar from './components/Slidebar/Slidebar';
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import MainPage from './components/MainPage/MainPage';
-import Detail from './components/Detail/Detail';
 import Layout from './components/Layout/Layout';
+import Detail_Movies from './Pages/Detail_Movies';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<MainPage />}/>
-          <Route path='/standup/:id' element={<Detail/>}/>
+          <Route path='/Movies' element={<Detail_Movies />}/>
         </Route>
       </Routes>
     </>
