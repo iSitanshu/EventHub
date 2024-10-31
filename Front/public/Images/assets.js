@@ -31,10 +31,24 @@ import insta from './instagram.jpeg';
 import tweet from './twitter.jpeg';
 import What from './whatsapp.jpeg';
 import tele from './telegram.jpeg'
+import Location from './Location.jpeg'
+
+import Ahmedabad from './Ahmedabad.jpeg'
+import Banglore from './Banglore.jpeg'
+import Chennai from './Chennai.jpeg'
+import Hyderabad from './Hyderabad.jpeg'
+import Jaipur from './Jaipur.jpeg'
+import Kolkata from './Kolkata.jpeg'
+import Mumbai from './Mumbai.jpeg'
+import NewDelhi from './New Delhi.jpeg'
+import Pune from './Pune.jpeg'
 
 export {
     concert, food, meetup, football, guitar, cricket,
     car, festival, abhishek, samay, madhur, swati, zakir, aashish, biswa, akshay,
     image1, image2, image3, image4, image5, image6, image7,
-    ice, nehu, rum, van, tramp, wow, insta,tweet,What,tele // Exporting new images
+    ice, nehu, rum, van, tramp, wow, insta, tweet, What, tele, Location, // Exporting new images
+
+    Ahmedabad, Banglore, Chennai, Hyderabad, Jaipur, 
+    Kolkata, Mumbai, NewDelhi, Pune
 };

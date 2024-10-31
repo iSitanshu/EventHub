@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function usemovieshowing() {
     const [data, setData] = useState([]);
+    const [film, setfilm] = useState([]);
     
     useEffect(() => {
         fetch('https://api-gate2.movieglu.com/filmsNowShowing/?n=9', {

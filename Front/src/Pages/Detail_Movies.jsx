@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
 function Detail_Movies() {
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    
     const location = useLocation();
     const { movie } = location.state || {};
 
@@ -10,15 +13,14 @@ function Detail_Movies() {
         return <div className="text-white text-center py-10">No movie selected. Please go back and select a movie.</div>;
     }
 
-    console.log(movie);
-    const imdbID = movie.imdb_id;
+    
     const posterImage = movie.images?.poster?.[1]?.medium?.film_image || "fallback_image_url.jpg";
     const filmTrailer = movie.film_trailer ? (
         <a
             href={movie.film_trailer}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-300 transition-all underline"
+            className="text-green-500 hover:text-green-300 transition-all underline"
         >
             Watch Trailer
         </a>
@@ -26,9 +28,36 @@ function Detail_Movies() {
         <p className="text-gray-400">Trailer not available</p>
     );
 
+    const imdbID = movie.imdb_title_id;
+    const apikey = "692e9ea3"
+
+    // Example: Using OMDB API to fetch movie details
+    const fetchMovieDetails = async () => {
+        try {
+            const response = await fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=${apikey}`);
+            if (!response.ok) {
+                throw new Error("Failed to fetch movie data");
+            }
+            const result = await response.json();
+            setData(result);
+        } catch (err) {
+            setError(err.message);
+            console.error("Error:", err);
+        }
+    };
+    console.log(movie)
+    console.log(imdbID)
+    console.log(data)
+
+    useEffect(() => {
+        if (imdbID) {
+            fetchMovieDetails();
+        }
+    }, [imdbID]);
+
     return (
-        <div className="bg-black min-h-screen text-white py-10 px-5">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start justify-center p-6 shadow-lg rounded-lg bg-gray-900">
+        <div className="bg-black min-h-screen text-white py-32 px-auto">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start justify-center p-6 shadow-lg rounded-lg">
                 {/* Movie Poster */}
                 <img
                     src={posterImage}
@@ -63,6 +92,24 @@ function Detail_Movies() {
                         <p className="font-semibold text-white mb-2">Description</p>
                         <p>{movie.synopsis_long || 'No description available.'}</p>
                     </div>
+
+                    {/* Additional Data */}
+                    {data && (
+                        <div className="mt-4">
+                            <p className="text-gray-300">
+                                <strong>Genre:</strong> {data.Genre}
+                            </p>
+                            <p className="text-gray-300">
+                                <strong>Director:</strong> {data.Director}
+                            </p>
+                            <p className="text-gray-300">
+                                <strong>Actors:</strong> {data.Actors}
+                            </p>
+                        </div>
+                    )}
+
+                    {/* Error Handling */}
+                    {error && <p className="text-red-500 mt-4">Error: {error}</p>}
                 </div>
             </div>
         </div>

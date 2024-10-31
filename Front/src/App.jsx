@@ -8,7 +8,7 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 import MainPage from './components/MainPage/MainPage';
 import Layout from './components/Layout/Layout';
 import Detail_Movies from './Pages/Detail_Movies';
-
+import Location from './Extras/Location';
 
 function App() {
   const [showSlidebar,setShowSlidebar] = useState(false);
@@ -26,6 +26,7 @@ function App() {
           <Route path='/Movies' element={<Detail_Movies />}/>
         </Route>
       </Routes>
+      <Location/>
     </>
   )
 }
