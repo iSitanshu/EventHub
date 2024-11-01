@@ -12,6 +12,7 @@ import Location from './Extras/Location/Location';
 import UserContextProvider from './context/UserContextProvider.jsx'
 import Detail_Standup from './Pages/Detail_Standup.jsx';
 import Detail_Play from './Pages/Detail_Play.jsx';
+import Detail_Other from './Pages/Detail_Other.jsx';
 
 function App() {
   const [showSlidebar,setShowSlidebar] = useState(false);
@@ -31,6 +32,7 @@ function App() {
           <Route path='/Movies' element={<Detail_Movies />}/>
           <Route path='/Stand-up' element={<Detail_Standup/>}/>
           <Route path='/Play' element={<Detail_Play/>} />
+          <Route path='/Other-Events' element={<Detail_Other />} />
         </Route>
       </Routes>
     </UserContextProvider>
