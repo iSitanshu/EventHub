@@ -39,7 +39,8 @@ const NowShowing = () => {
                         const poster = movie.images.poster && movie.images.poster["1"];
                         const posterImage = poster ? poster.medium.film_image : "fallback_image_url.jpg"; // Fallback image
                         return (
-                            <NavLink to="/Movies" 
+                            <NavLink 
+                            to="/Movies" 
                             state={{movie}}
                             className="slide" key={idx} style={{ width: `${100 / slidesToShow}%` }}>
                                 {poster && (

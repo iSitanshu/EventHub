@@ -29,6 +29,7 @@ const Explore = () => {
   return (
     <div className="explore-main">
       <p><span>Explore Events</span> across {updatelocation}</p>
+      <h2>(Comming Soon)</h2>
       <div className="explore-list">
         {events.map((event, index) => (
           <div key={index} className="explore-item">

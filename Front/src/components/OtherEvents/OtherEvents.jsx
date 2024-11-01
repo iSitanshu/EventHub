@@ -22,20 +22,22 @@ const Standup = () => {
     const [index, setIndex] = useState(0);
     const totalSlides = images.length;
 
+    const slidesToShow = 4; // Number of slides to show at once
+
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-        }, 8000); // Change slide every 10 seconds
+            setIndex((prevIndex) => (prevIndex + 1) % slidesToShow);
+        }, 12000);
 
-        return () => clearInterval(interval); // Cleanup on unmount
+        return () => clearInterval(interval);
     }, [totalSlides]);
 
     const nextSlide = () => {
-        setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+        setIndex((prevIndex) => (prevIndex + 1) % slidesToShow);
     };
 
     const prevSlide = () => {
-        setIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
+        setIndex((prevIndex) => (prevIndex - 1 + Math.ceil(totalSlides / slidesToShow)) % slidesToShow);
     };
 
     return (

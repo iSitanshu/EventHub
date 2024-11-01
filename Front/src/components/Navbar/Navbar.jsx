@@ -7,30 +7,40 @@ import UserContext from "../../context/UserContext";
 
 const Navbar = ({ setShowSlidebar, setShowLogin, setDisplayLocationTab }) => {
     const {updatelocation} = useContext(UserContext)
+    const [inputinplaceholder, setInputinPlaceHolder] = useState("")
 
     const {setCheckfordisplayLocation} = useContext(UserContext)
     const {checkfordisplaylocation} = useContext(UserContext)
 
-    console.log(updatelocation)
-
     const check = () => {
         const pointer = !checkfordisplaylocation
-        setDisplayLocationTab(pointer)
         setCheckfordisplayLocation(pointer)
+        setDisplayLocationTab(pointer)
+    }
+
+    const handleEvent = (e) => {
+        setCheckfordisplayLocation(e.target.value)
     }
 
     return (
         <><div className='Navbar'>
             <ul className=" Navbar-left">
                 <li><Link to="/"><img src={image1} alt="" height={65} /></Link></li>
-                <li><input className="id" type="text" placeholder="   Search for Events,Movies,Plays and Standups" /></li>
+                <li>
+                    <input className="id" 
+                    type="text" 
+                    placeholder="   Search for Events,Movies,Plays and Standups" 
+                    value={inputinplaceholder}
+                    onChange={handleEvent}
+                    />
+                </li>
             </ul>
             <ul className="Navbar-right">
                 <h1 className="mx-6 text-2xl font-semibold">{updatelocation}</h1>
                 <li>
                     <Link>
                         <p>
-                            <img src={Location} className="h-8"  onClick={()=>check} alt="" height={30} />
+                            <img src={Location} className="h-8"  onClick={check} alt="" height={30} />
                         </p>
                     </Link>
                 </li>

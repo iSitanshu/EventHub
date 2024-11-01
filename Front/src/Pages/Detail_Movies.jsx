@@ -13,7 +13,6 @@ function Detail_Movies() {
         return <div className="text-white text-center py-10">No movie selected. Please go back and select a movie.</div>;
     }
 
-    
     const posterImage = movie.images?.poster?.[1]?.medium?.film_image || "fallback_image_url.jpg";
     const filmTrailer = movie.film_trailer ? (
         <a
@@ -29,7 +28,7 @@ function Detail_Movies() {
     );
 
     const imdbID = movie.imdb_title_id;
-    const apikey = "692e9ea3"
+    const apikey = "692e9ea3";
 
     // Example: Using OMDB API to fetch movie details
     const fetchMovieDetails = async () => {
@@ -45,9 +44,6 @@ function Detail_Movies() {
             console.error("Error:", err);
         }
     };
-    console.log(movie)
-    console.log(imdbID)
-    console.log(data)
 
     useEffect(() => {
         if (imdbID) {
@@ -56,18 +52,22 @@ function Detail_Movies() {
     }, [imdbID]);
 
     return (
-        <div className="bg-black min-h-screen text-white py-32 px-auto">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start justify-center p-6 shadow-lg rounded-lg">
-                {/* Movie Poster */}
-                <img
-                    src={posterImage}
-                    alt={movie.film_name}
-                    className="max-w-xs md:max-w-sm rounded-lg shadow-lg object-cover"
-                />
+        <div className="bg-black flex min-h-screen text-white py-32 px-auto">
+            <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-12 p-6 shadow-lg rounded-lg">
+                
+                {/* Movie Poster Section */}
+                <div className="w-full md:w-1/3">
+                    <img
+                        src={posterImage}
+                        alt={movie.film_name}
+                        className="w-full rounded-lg shadow-lg object-cover"
+                    />
+                </div>
 
-                {/* Movie Details */}
-                <div className="flex flex-col gap-6 md:w-2/3">
-                    <h1 className="text-5xl font-bold text-center md:text-left">{movie.film_name}</h1>
+                {/* Movie Details Section */}
+                <div className="flex flex-col gap-6 w-full md:w-1/2">
+                    <h1 className="text-5xl font-bold text-center md:text-left text-green-500">{movie.film_name}</h1>
+                    
                     <p className="text-lg text-gray-300">
                         <span className="font-semibold">Rating:</span> {movie.age_rating?.[0]?.rating || 'N/A'}
                     </p>
@@ -77,32 +77,32 @@ function Detail_Movies() {
                         href={`https://www.imdb.com/title/${imdbID}/`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-yellow-500 hover:text-yellow-300 transition-all underline text-lg"
+                        className="text-yellow-500 hover:text-green-300 transition-all underline text-lg"
                     >
                         View on IMDb
                     </a>
 
-                    {/* Trailer */}
+                    {/* Trailer Section */}
                     <div className="mt-4">
                         {filmTrailer}
                     </div>
 
-                    {/* Movie Description */}
+                    {/* Movie Description Section */}
                     <div className="text-gray-400 text-base leading-relaxed">
                         <p className="font-semibold text-white mb-2">Description</p>
                         <p>{movie.synopsis_long || 'No description available.'}</p>
                     </div>
 
-                    {/* Additional Data */}
+                    {/* Additional Movie Data from API */}
                     {data && (
-                        <div className="mt-4">
-                            <p className="text-gray-300">
+                        <div className="mt-4 text-gray-300">
+                            <p>
                                 <strong>Genre:</strong> {data.Genre}
                             </p>
-                            <p className="text-gray-300">
+                            <p>
                                 <strong>Director:</strong> {data.Director}
                             </p>
-                            <p className="text-gray-300">
+                            <p>
                                 <strong>Actors:</strong> {data.Actors}
                             </p>
                         </div>

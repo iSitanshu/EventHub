@@ -10,6 +10,8 @@ import Layout from './components/Layout/Layout';
 import Detail_Movies from './Pages/Detail_Movies';
 import Location from './Extras/Location/Location';
 import UserContextProvider from './context/UserContextProvider.jsx'
+import Detail_Standup from './Pages/Detail_Standup.jsx';
+import Detail_Play from './Pages/Detail_Play.jsx';
 
 function App() {
   const [showSlidebar,setShowSlidebar] = useState(false);
@@ -20,13 +22,15 @@ function App() {
     <UserContextProvider>
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
       {showSlidebar && <Slidebar showSlidebar={showSlidebar} setShowSlidebar={setShowSlidebar} />}
-      {true && <Location setDisplayLocationTab={setDisplayLocationTab} />}
+      {displaylocationtab && <Location setDisplayLocationTab={setDisplayLocationTab} />}
       <Navbar setShowSlidebar={setShowSlidebar} setShowLogin={setShowLogin} setDisplayLocationTab={setDisplayLocationTab} />
       
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<MainPage />}/>
           <Route path='/Movies' element={<Detail_Movies />}/>
+          <Route path='/Stand-up' element={<Detail_Standup/>}/>
+          <Route path='/Play' element={<Detail_Play/>} />
         </Route>
       </Routes>
     </UserContextProvider>
