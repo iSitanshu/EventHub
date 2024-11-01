@@ -4,7 +4,7 @@ import UserContext from '../../context/UserContext'
 
 const PopularEvents = () => {
   const {updatelocation} = useContext(UserContext)
-
+  
   return (
 <>
 <div className="popularevent">
