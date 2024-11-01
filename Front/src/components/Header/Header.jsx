@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './Header.css';
 
-const Header = () => {
+const   Header = () => {
   useEffect(() => {
     const curtains = document.querySelectorAll('.curtain');
     curtains.forEach(curtain => curtain.classList.add('open'));

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./Explore.css";
 import {
   concert,
@@ -10,8 +10,11 @@ import {
   car,
   festival,
 } from '../../../public/Images/assets';
+import UserContext from '../../context/UserContext';
 
 const Explore = () => {
+  const {updatelocation} = useContext(UserContext)
+
   const events = [
       { img: concert, title: "Concert" },
       { img: food, title: "Food & Drinks" },
@@ -25,7 +28,7 @@ const Explore = () => {
 
   return (
     <div className="explore-main">
-      <p><span>Explore Events</span> across New Delhi</p>
+      <p><span>Explore Events</span> across {updatelocation}</p>
       <div className="explore-list">
         {events.map((event, index) => (
           <div key={index} className="explore-item">

@@ -8,17 +8,20 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 import MainPage from './components/MainPage/MainPage';
 import Layout from './components/Layout/Layout';
 import Detail_Movies from './Pages/Detail_Movies';
-import Location from './Extras/Location';
+import Location from './Extras/Location/Location';
+import UserContextProvider from './context/UserContextProvider.jsx'
 
 function App() {
   const [showSlidebar,setShowSlidebar] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-  
+  const [displaylocationtab, setDisplayLocationTab] = useState(false);
+
   return (
-    <>
+    <UserContextProvider>
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
       {showSlidebar && <Slidebar showSlidebar={showSlidebar} setShowSlidebar={setShowSlidebar} />}
-      <Navbar setShowSlidebar={setShowSlidebar} setShowLogin={setShowLogin} />
+      {true && <Location setDisplayLocationTab={setDisplayLocationTab} />}
+      <Navbar setShowSlidebar={setShowSlidebar} setShowLogin={setShowLogin} setDisplayLocationTab={setDisplayLocationTab} />
       
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -26,8 +29,7 @@ function App() {
           <Route path='/Movies' element={<Detail_Movies />}/>
         </Route>
       </Routes>
-      <Location/>
-    </>
+    </UserContextProvider>
   )
 }
 

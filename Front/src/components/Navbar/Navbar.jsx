@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"
-import Header from "../Header/Header";
-import PopularEvents from "../PopularEvents/PopularEvents";
-import Explore from "../Explore/Explore";
-import Footer from "../Footer/Footer";
-import Standup from "../Standup/Standup";
-import NowShowing from "../NowShowing/NowShowing";
-import Play from "../Play/Play"
-import OtherEvent from "../OtherEvents/OtherEvents"
-import Temp from "../Change/Temp"
 import { image1, Location } from "../../../public/Images/assets";
+import UserContext from "../../context/UserContext";
 
 
-const Navbar = ({ setShowSlidebar, setShowLogin }) => {
+const Navbar = ({ setShowSlidebar, setShowLogin, setDisplayLocationTab }) => {
+    const {updatelocation} = useContext(UserContext)
+
+    const {setCheckfordisplayLocation} = useContext(UserContext)
+    const {checkfordisplaylocation} = useContext(UserContext)
+
+    console.log(updatelocation)
+
+    const check = () => {
+        const pointer = !checkfordisplaylocation
+        setDisplayLocationTab(pointer)
+        setCheckfordisplayLocation(pointer)
+    }
 
     return (
         <><div className='Navbar'>
@@ -22,10 +26,11 @@ const Navbar = ({ setShowSlidebar, setShowLogin }) => {
                 <li><input className="id" type="text" placeholder="   Search for Events,Movies,Plays and Standups" /></li>
             </ul>
             <ul className="Navbar-right">
+                <h1 className="mx-6 text-2xl font-semibold">{updatelocation}</h1>
                 <li>
                     <Link>
                         <p>
-                            <img src={Location} className="h-8" alt="" height={30} />
+                            <img src={Location} className="h-8"  onClick={()=>check} alt="" height={30} />
                         </p>
                     </Link>
                 </li>
