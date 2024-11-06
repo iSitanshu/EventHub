@@ -1,6 +1,6 @@
 .Navbar{
     margin: 10px 70px 0px;
-    padding: 25px;
+    padding: 20px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -23,8 +23,8 @@
     gap: 10px;
 }
 .Navbar-left input{
-    height: 35px;
-    width: 500px;
+    height: 45px;
+    width: 550px;
     border-radius: 5px;
     min-width: 200px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -57,4 +57,58 @@
 .Navbar-menu:hover{
     transform: scale(1.1);
     cursor: pointer;
+}
+/* Responsive Design - For Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .Navbar {
+        margin: 10px 20px;
+    }
+
+    .Navbar-left input {
+        width: 100%;
+        max-width: 550px; /* Reduce search bar size after 550px width */
+    }
+
+    .Navbar-right {
+        gap: 10px; /* Reduce gap between elements */
+    }
+
+    .Navbar-right button {
+        width: 80px; /* Make the button smaller */
+    }
+
+    .Navbar-menu img {
+        height: 25px; /* Make the menu icon smaller */
+    }
+}
+
+/* Responsive Design - For Mobile Devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .Navbar {
+        margin: 5px 10px;
+    }
+
+    .Navbar-left img {
+        width: 30px; /* Reduce the size of the logo */
+    }
+
+    .Navbar-left input {
+        width: 100%;
+        max-width: 400px; /* Reduce search bar size for mobile */
+        font-size: 14px;
+    }
+
+    .Navbar-right {
+        gap: 5px; /* Smaller gap for mobile */
+    }
+
+    .Navbar-right button {
+        width: 70px; /* Make the button smaller */
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .Navbar-menu img {
+        height: 20px; /* Make the menu icon smaller */
+    }
 }
