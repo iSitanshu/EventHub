@@ -4,7 +4,8 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    position:static;
+    position: static;
+    align-items: center;
 }
 .Navbar-left{
     display: flex;
@@ -13,6 +14,9 @@
     align-items: center;
     gap: 25px;
     position: relative;
+}
+.search-icon{
+    display: none;
 }
 .Navbar-right{
     display: flex;
@@ -58,15 +62,15 @@
     transform: scale(1.1);
     cursor: pointer;
 }
-/* Responsive Design - For Tablets (max-width: 768px) */
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 950px) {
     .Navbar {
         margin: 10px 20px;
     }
 
     .Navbar-left input {
         width: 100%;
-        max-width: 550px; /* Reduce search bar size after 550px width */
+        max-width: 550px; /* Reduce search bar size after 550px */
     }
 
     .Navbar-right {
@@ -78,37 +82,88 @@
     }
 
     .Navbar-menu img {
-        height: 25px; /* Make the menu icon smaller */
+        height: 25px; /* Smaller menu icon */
     }
 }
-
-/* Responsive Design - For Mobile Devices (max-width: 480px) */
-@media screen and (max-width: 480px) {
+/* Responsive Design - For Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
     .Navbar {
-        margin: 5px 10px;
-    }
-
-    .Navbar-left img {
-        width: 30px; /* Reduce the size of the logo */
+        margin: 10px 20px;
     }
 
     .Navbar-left input {
         width: 100%;
-        max-width: 400px; /* Reduce search bar size for mobile */
-        font-size: 14px;
+        max-width: 550px; /* Reduce search bar size after 550px */
     }
 
     .Navbar-right {
-        gap: 5px; /* Smaller gap for mobile */
+        gap: 10px; /* Reduce gap between elements */
     }
 
     .Navbar-right button {
-        width: 70px; /* Make the button smaller */
+        width: 80px; /* Make the button smaller */
+    }
+
+    .Navbar-menu img {
+        height: 25px; /* Smaller menu icon */
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .Navbar-left input {
+        display: none; /* Hide search bar */
+    }
+
+    .Navbar-left .search-icon {
+        display: inline-block;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .Navbar-left img {
+        width: 35px; /* Reduce logo size */
+    }
+
+    .Navbar-right h1 {
+        font-size: 14px; /* Smaller text for the location */
+    }
+
+    .Navbar-right button {
+        width: 70px; /* Adjust the size of the signup button */
         height: 35px;
         font-size: 12px;
     }
 
-    .Navbar-menu img {
-        height: 20px; /* Make the menu icon smaller */
+    .Navbar-right img {
+        height: 25px; /* Adjust the location icon */
+    }
+}
+
+/* Responsive Design - For Mobile Devices (max-width: 400px) */
+@media screen and (max-width: 400px) {
+    .Navbar {
+        margin: 5px -2px;
+    }
+
+    .Navbar-left img {
+        width: 30px; /* Further reduce logo size */
+    }
+
+    .Navbar-left .search-icon {
+        font-size: 20px; /* Adjust search icon size */
+    }
+
+    .Navbar-right h1 {
+        font-size: 12px; /* Even smaller text for the location */
+    }
+
+    .Navbar-right button {
+        width: 60px; /* Smaller signup button */
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .Navbar-right img {
+        height: 20px; /* Smaller location icon */
     }
 }

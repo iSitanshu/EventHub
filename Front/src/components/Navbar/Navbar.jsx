@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"
+import { FaSearch } from "react-icons/fa"
 import { image1, Location } from "../../../public/Images/assets";
 import UserContext from "../../context/UserContext";
 
@@ -27,16 +28,18 @@ const Navbar = ({ setShowSlidebar, setShowLogin, setDisplayLocationTab }) => {
             <ul className=" Navbar-left">
                 <li><Link to="/"><img src={image1} alt="" height={65} /></Link></li>
                 <li>
-                    <input className="id" 
+                    <input 
+                    className="id" 
                     type="text" 
                     placeholder="   Search for Events,Movies,Plays and Standups" 
                     value={inputinplaceholder}
                     onChange={handleEvent}
                     />
+                    <FaSearch className="search-icon" />
                 </li>
             </ul>
             <ul className="Navbar-right">
-                <h1 className="mx-6 text-2xl font-semibold">{updatelocation}</h1>
+            <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-semibold">{updatelocation}</h1>
                 <li>
                     <Link>
                         <p>
